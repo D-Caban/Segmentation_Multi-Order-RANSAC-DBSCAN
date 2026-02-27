@@ -165,8 +165,3 @@ colors = plt.get_cmap("tab10")(labels / max_label if max_label > 0 else 1)
 
 colors[labels < 0] = 0 
 rest.colors = o3d.utility.Vector3dVector(colors[:, :3])
-
-
-
-
-
