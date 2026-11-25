@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seg3d"
+version = "0.1.0"
+description = "CLI pipeline for point-cloud and Gaussian-splat segmentation (multi-order RANSAC + DBSCAN)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "open3d>=0.17",
+  "plyfile>=1.0",
+]
+
+[project.optional-dependencies]
+viz = ["matplotlib>=3.7"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+seg3d = "seg3d.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["seg3d*"]
